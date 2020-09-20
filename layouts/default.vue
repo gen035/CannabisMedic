@@ -8,7 +8,7 @@
 import Header from './header';
 
 export default {
-  middleware: ['settings', 'navigation', 'i18n'],
+  middleware: ['settings', 'navigation'],
   components: {
     Header
   }

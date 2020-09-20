@@ -10,7 +10,9 @@
             />
           </a>
         </div>
-        <div class="col-md-7">ddd</div>
+        <div class="col-md-7">
+          <Navigation :navigation="getNav" />
+        </div>
         <div class="col-md-2">
           <Button
             type="link"
@@ -25,28 +27,18 @@
 <script>
   import Button from '~/components/Button';
   import Media from '~/components/Media';
+  import Navigation from '~/components/Navigation';
+
   export default {
     computed: {
-      locale() {
-        return this.$store.state.i18n.locale;
+      getNav() {
+        return this.$store.state.navigation.body
       }
-    },
-    data() {
-      return {
-        nav: [],
-      }
-    },
-    created() {
-      console.log(this.$store.state.navigation)
-      console.log(this.$store.state)
-    },
-    watch: {
-    },
-    methods: {
     },
     components: {
       Button,
-      Media
+      Media,
+      Navigation
     }
   }
 </script>

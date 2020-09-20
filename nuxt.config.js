@@ -51,8 +51,7 @@ export default {
   */
   plugins: [
     '~/plugins/map.js',
-    '~/plugins/axios.js',
-    '~/plugins/i18n.js'
+    '~/plugins/axios.js'
   ],
   /*
   ** Nuxt.js modules
@@ -63,6 +62,25 @@ export default {
       linkResolver: function(doc, ctx) {
         return '/'
       }
+    }],
+    ['nuxt-i18n', {
+      locales: [
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-CA',
+          file: 'en.js'
+        },
+        {
+          name: 'Francais',
+          code: 'fr',
+          iso: 'fr-CA',
+          file: 'fr.js'
+        }
+      ],
+      langDir: 'locales/',
+      defaultLocale: 'fr',
+      lazy: true
     }],
     ['@nuxtjs/google-analytics', {
       id: ''
