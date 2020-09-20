@@ -33,7 +33,7 @@ export default {
       { name:'msapplication-wide310x150logo', content:'/mstile-310x150.png' },
       { name:'msapplication-square310x310logo', content:'/mstile-310x310.png' },
       { rel: 'stylesheet', type: 'text/css', href: '//use.fontawesome.com/releases/v5.4.2/css/all.css'},
-      { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap'},
+      { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=PT+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'},
     ]
   },
   /*
@@ -51,7 +51,8 @@ export default {
   */
   plugins: [
     '~/plugins/map.js',
-    '~/plugins/axios.js'
+    '~/plugins/axios.js',
+    '~/plugins/i18n.js'
   ],
   /*
   ** Nuxt.js modules
@@ -62,25 +63,6 @@ export default {
       linkResolver: function(doc, ctx) {
         return '/'
       }
-    }],
-    ['nuxt-i18n', {
-      locales: [
-        {
-          name: 'English',
-          code: 'en',
-          iso: 'en-CA',
-          file: 'en.js'
-        },
-        {
-          name: 'Francais',
-          code: 'fr',
-          iso: 'fr-CA',
-          file: 'fr.js'
-        }
-      ],
-      langDir: 'locales/',
-      defaultLocale: 'fr',
-      lazy: true
     }],
     ['@nuxtjs/google-analytics', {
       id: ''

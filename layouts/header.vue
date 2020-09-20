@@ -5,14 +5,18 @@
         <div class="col-md-3">
           <a href="/" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
             <Media
-              classes="header-logo"
+              classes="header__logo"
               :image="this.$store.state.settings.logo"
             />
           </a>
         </div>
         <div class="col-md-7">ddd</div>
         <div class="col-md-2">
-          <Button type="link" :url="this.$store.state.navigation.button_link.url" :text="this.$store.state.navigation.button_text" />
+          <Button
+            type="link"
+            :url="this.$store.state.navigation.button_link.url"
+            :text="this.$store.state.navigation.button_text"
+          />
         </div>
       </div>
     </div>
