@@ -22,10 +22,12 @@
         </div>
       </div>
     </div>
+    <Lang />
   </header>
 </template>
 <script>
   import Button from '~/components/Button';
+  import Lang from '~/components/Lang';
   import Media from '~/components/Media';
   import Navigation from '~/components/Navigation';
 
@@ -37,6 +39,7 @@
     },
     components: {
       Button,
+      Lang,
       Media,
       Navigation
     }
