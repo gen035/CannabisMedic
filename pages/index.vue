@@ -1,8 +1,16 @@
 <template>
-  <Hero :hero-data="hero.data" />
+  <div>
+    <Hero :hero-data="hero.data" />
+    <section class="home__blocks">
+      <template v-for="(block, index) in content.body">
+        <Block :block="block.primary" :index="index" :key="index" />
+      </template>
+    </section>
+  </div>
 </template>
 
 <script>
+  import Block from '~/components/Block';
   import Hero from '~/components/Hero';
 
   export default {
@@ -19,12 +27,6 @@
             content = result.data;
           });
         })
-
-      // let blocks = [];
-      // for (const block of content.blocks) {
-      //   const item = await app.$prismic.api.getByID(block.block.id);
-      //   blocks.push(item.data);
-      // }
 
       let hero = {};
       hero = await app.$prismic.api.getByID(content.hero.id);
@@ -53,6 +55,7 @@
 
     },
     components: {
+      Block,
       Hero
     },
     nuxtI18n: {
