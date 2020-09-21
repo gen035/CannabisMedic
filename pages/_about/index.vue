@@ -1,18 +1,15 @@
 <template>
   <div>
     <Hero :hero-data="hero.data" />
-    <section class="clinics container">
+    <section class="categories container">
       <div class="row align-items-center">
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div v-html="$prismic.asHtml(content.text)" />
         </div>
-        <div class="col-md-3">
-          <Media :image="content.image" class="clinics__image" />
-        </div>
       </div>
-      <div class="clinics__items row">
+      <div class="categories__items">
         <template v-for="(item, index) in content.body[0].items">
-          <ClinicBlock :block="item" :key="index" />
+          <Category :category="item" :key="index" />
         </template>
       </div>
     </section>
@@ -20,7 +17,7 @@
 </template>
 
 <script>
-  import ClinicBlock from '~/components/ClinicBlock';
+  import Category from '~/components/Category';
   import Hero from '~/components/Hero';
   import Media from '~/components/Media';
 
@@ -63,7 +60,7 @@
       }
     },
     components: {
-      ClinicBlock,
+      Category,
       Hero,
       Media
     },
