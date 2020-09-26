@@ -3,12 +3,18 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="block__title">{{category.title}}</h1>
-        <div v-html="$prismic.asHtml(category.text)" />
+        <div v-html="$prismic.asHtml(category.text1)" />
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 category__specs" v-html="$prismic.asHtml(category.appearance)" />
-      <div class="col-md-6 category__specs" v-html="$prismic.asHtml(category.benefits)" />
+      <div class="col-md-6">
+        <h3>{{ $t('category.appearance') }}</h3>
+        <div class="category__specs" v-html="$prismic.asHtml(category.appearance)" />
+      </div>
+      <div class="col-md-6">
+        <h3>{{ $t('category.benefits') }}</h3>
+        <div class="category__specs" v-html="$prismic.asHtml(category.benefits)" />
+      </div>
     </div>
   </div>
 </template>

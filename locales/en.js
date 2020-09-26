@@ -4,6 +4,10 @@ export default {
     interior: "Interior plants: ",
     stock: "Grams in stock: "
   },
+  category: {
+    benefits: "Benefits",
+    appearance: "Appearance"
+  },
   clinic: {
     calculator: {
       title: "Indoor plant and storage limit calculator."

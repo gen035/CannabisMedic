@@ -4,6 +4,10 @@ export default {
     interior: "Plantes intérieures: ",
     stock: "Grammes stockés: "
   },
+  category: {
+    benefits: "Bénéfices",
+    appearance: "Apparance"
+  },
   clinic: {
     calculator: {
       title: "Calculateur de limites de plants et d'entreposage pour la culture intérieure."
