@@ -1,11 +1,14 @@
 <template>
   <div class="category">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <h1 class="block__title">{{category.title}}</h1>
         <div v-html="$prismic.asHtml(category.text)" />
       </div>
-      <div class="col-md-4 category__specs" v-html="$prismic.asHtml(category.specs)" />
+    </div>
+    <div class="row">
+      <div class="col-md-6 category__specs" v-html="$prismic.asHtml(category.appearance)" />
+      <div class="col-md-6 category__specs" v-html="$prismic.asHtml(category.benefits)" />
     </div>
   </div>
 </template>
