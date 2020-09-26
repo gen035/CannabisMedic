@@ -4,7 +4,7 @@
       <div class="row align-items-center" :class="{'flex-row-reverse' : isReversed}">
         <div class="col-md-6">
           <h1 class="hero__title">{{heroData.title}}</h1>
-          <div v-html="$prismic.asHtml(heroData.text)" />
+          <div v-if="heroData.text[0]" v-html="$prismic.asHtml(heroData.text)" />
         </div>
         <div v-if="renderImage" class="col-md-6">
           <Media :image="heroData.image" />
