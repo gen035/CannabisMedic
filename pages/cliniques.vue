@@ -18,7 +18,7 @@
       <div class="clinic__calculator">
         <h2 class="clinic__calculator__title">{{ $t('clinic.calculator.title') }}</h2>
         <div class="row">
-          <div class="col-md-4 offset-md-4">
+          <div class="col-md-6 offset-md-3">
             <Calculator />
           </div>
         </div>

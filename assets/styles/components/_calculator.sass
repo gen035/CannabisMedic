@@ -1,4 +1,18 @@
 .calculator
+  padding: 24px
+
+  .calculator__locations
+    display: flex
+    margin: 0 auto 14px
+
+  .calculator__location
+    align-items: center
+    display: flex
+    font-weight: $fw-light
+    margin-right: 20px
+    &:last-child
+      margin-right: 0
+
   .calculator__text
     display: flex
     color: $slate
@@ -8,6 +22,7 @@
     span
       color: $green
       font-weight: $fw-regular
+
     .calculator__input
       margin-left: 12px
       i

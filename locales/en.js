@@ -1,8 +1,11 @@
 export default {
   calculator: {
-    daily: "Daily grams allowed: ",
-    interior: "Interior plants: ",
-    stock: "Grams in stock: "
+    daily: "Daily grams:",
+    plantInterior: "Interior plants:",
+    plantExterior: "Exterior plants:",
+    stock: "Grams in stock: ",
+    interior: "Intérieur",
+    exterior: "Extérieur"
   },
   category: {
     benefits: "Benefits",

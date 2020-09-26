@@ -1,8 +1,11 @@
 export default {
   calculator: {
-    daily: "Grammes quotidiens autorisés: ",
-    interior: "Plantes intérieures: ",
-    stock: "Grammes stockés: "
+    daily: "Grammes quotidiens:",
+    plantInterior: "Plantes intérieures:",
+    plantExterior: "Plants extérieures:",
+    stock: "Grammes stockés:",
+    interior: "Interieur",
+    exterior: "Extérieur"
   },
   category: {
     benefits: "Bénéfices",
