@@ -51,7 +51,8 @@ export default {
   */
   plugins: [
     '~/plugins/map.js',
-    '~/plugins/axios.js'
+    '~/plugins/axios.js',
+    '~/plugins/bootstrap.js'
   ],
   /*
   ** Nuxt.js modules

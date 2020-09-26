@@ -31,8 +31,6 @@
   import Media from '~/components/Media';
   import Link from '~/components/Link';
   export default {
-    computed: {
-    },
     components: {
       Link,
       Media
