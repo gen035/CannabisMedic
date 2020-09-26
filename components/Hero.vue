@@ -19,8 +19,7 @@
     props: {
       heroData: {
         type: Object,
-        require: true,
-        default: () => ({})
+        require: true
       }
     },
     computed: {

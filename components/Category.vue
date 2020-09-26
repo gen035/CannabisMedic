@@ -18,8 +18,7 @@
     props: {
       category: {
         type: Object,
-        require: true,
-        default: () => ({})
+        require: true
       }
     }
   }

@@ -19,8 +19,7 @@
     props: {
       block: {
         type: Object,
-        require: true,
-        default: () => ({})
+        require: true
       },
       index: {
         type: Number,

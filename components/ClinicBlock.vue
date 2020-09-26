@@ -10,8 +10,7 @@
     props: {
       block: {
         type: Object,
-        require: true,
-        default: () => ({})
+        require: true
       }
     }
   }

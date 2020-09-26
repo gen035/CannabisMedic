@@ -15,18 +15,15 @@
     props: {
       text: {
         type: String,
-        require: true,
-        default: () => ("Text")
+        require: true
       },
       type: {
         type: String,
-        require: true,
-        default: () => ("button")
+        require: true
       },
       url: {
         type: String,
-        require: true,
-        default: () => ("")
+        require: true
       }
     }
   }

@@ -1,25 +1,37 @@
 <template>
   <div>
     <Hero :hero-data="hero.data" />
-    <section class="categories container">
+    <section class="dosage container">
       <div class="row align-items-center">
         <div class="col-md-12">
           <div v-html="$prismic.asHtml(content.text)" />
         </div>
       </div>
-      <div class="categories__items">
-        <template v-for="(item, index) in content.body[0].items">
-          <Category :category="item" :key="index" />
-        </template>
+      <div class="row">
+        <div class="col-md-12 dosage-table">
+          <div class="row">
+            <div class="col-md-3 dosage-table--header">{{ $t('dosage.mode') }}</div>
+            <div class="col-md-3 dosage-table--header">{{ $t('dosage.start') }}</div>
+            <div class="col-md-3 dosage-table--header">{{ $t('dosage.max') }}</div>
+            <div class="col-md-3 dosage-table--header">{{ $t('dosage.duration') }}</div>
+          </div>
+          <template v-for="(item, index) in content.body[0].items">
+            <Dosage :dosage="item" :key="index" />
+          </template>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="dosage-disclaimer" v-html="$prismic.asHtml(content.disclaimer)" />
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-  import Category from '~/components/Category';
   import Hero from '~/components/Hero';
-  import Media from '~/components/Media';
+  import Dosage from '~/components/Dosage';
 
   export default {
     async asyncData({ app, error, store}) {
@@ -27,7 +39,7 @@
       let content = []
       
       await app.$prismic.api.query(
-        app.$prismic.predicates.at('document.type', 'aboutcategories'), {
+        app.$prismic.predicates.at('document.type', 'aboutdosage'), {
             lang: `${locale}-ca`
           }
         ).then((response) => {
@@ -60,14 +72,13 @@
       }
     },
     components: {
-      Category,
       Hero,
-      Media
+      Dosage
     },
     nuxtI18n: {
       paths: {
-        fr: '/a-propos-du-cannabis/categories',
-        en: '/about-cannabis/categories'
+        fr: '/a-propos-du-cannabis/dosage',
+        en: '/about-cannabis/dosage'
       }
     },
   }
