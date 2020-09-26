@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row align-items-center" :class="{'flex-row-reverse' : isOdd}">
         <div class="col-md-6">
-          <h1 class="block__title">{{block.title}}</h1>
+          <h2 class="block__title">{{block.title}}</h2>
           <div v-html="$prismic.asHtml(block.text)" />
         </div>
         <div v-if="renderImage" class="col-md-6">
