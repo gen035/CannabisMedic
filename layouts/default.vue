@@ -12,7 +12,11 @@ import Footer from './footer';
 import MiniCalculator from '~/components/MiniCalculator';
 
 export default {
-  middleware: ['settings', 'navigation'],
+  middleware: [
+    'settings',
+    'navigation',
+    'message'
+  ],
   components: {
     Header,
     Footer,

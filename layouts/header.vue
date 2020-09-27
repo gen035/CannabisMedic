@@ -1,6 +1,7 @@
 <template>
   <header class="header">
-    <div class="container">
+    <Message :message="getMessage" />
+    <div class="header-navigation container">
       <div class="row align-items-center">
         <div class="col-md-3">
           <a href="/" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
@@ -30,18 +31,23 @@
   import Lang from '~/components/Lang';
   import Media from '~/components/Media';
   import Navigation from '~/components/Navigation';
+  import Message from '~/components/Message';
 
   export default {
     computed: {
       getNav() {
         return this.$store.state.navigation.body
+      },
+      getMessage() {
+        return this.$store.state.message
       }
     },
     components: {
       Button,
       Lang,
       Media,
-      Navigation
+      Navigation,
+      Message
     }
   }
 </script>
