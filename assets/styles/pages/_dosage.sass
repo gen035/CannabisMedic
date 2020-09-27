@@ -20,17 +20,29 @@
     .dosage-table--header
       background-color: $green-light
       font-weight: $fw-bold
+      &--mobile
+        font-weight: $fw-bold
+        margin-bottom: 8px
   
     .dosage-table--content
       font-weight: $fw-light
       font-size: 16px
+      &:first-child
+        font-weight: $fw-bold
       span
         font-size: 12px
         color: $green
+        font-weight: $fw-light
 
     .col-md-3
       padding: 15px
-      border-right: 1px solid $green-light
+      border-right: 0
+      border-bottom: 1px solid $green-light
+      @media(min-width: $bp-md)
+        border-bottom: 0
+        border-right: 1px solid $green-light
+      &:first-child
+        background-color: $green-light
       &:last-child
         border-right: 0
     .row

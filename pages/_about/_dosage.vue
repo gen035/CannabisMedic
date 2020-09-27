@@ -7,9 +7,9 @@
           <div v-html="$prismic.asHtml(content.text)" />
         </div>
       </div>
-      <div class="row">
+      <div>
         <div class="col-md-12 dosage-table">
-          <div class="row">
+          <div class="row d-md-flex d-none">
             <div class="col-md-3 dosage-table--header">{{ $t('dosage.mode') }}</div>
             <div class="col-md-3 dosage-table--header">{{ $t('dosage.start') }}</div>
             <div class="col-md-3 dosage-table--header">{{ $t('dosage.max') }}</div>
@@ -20,11 +20,7 @@
           </template>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="dosage-disclaimer" v-html="$prismic.asHtml(content.disclaimer)" />
-        </div>
-      </div>
+      <div class="dosage-disclaimer" v-html="$prismic.asHtml(content.disclaimer)" />
     </section>
   </div>
 </template>
