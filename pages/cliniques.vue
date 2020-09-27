@@ -3,10 +3,10 @@
     <Hero :hero-data="hero.data" />
     <section class="clinics container">
       <div class="row align-items-center">
-        <div class="col-md-9">
+        <div class="col-md-9 col-12">
           <div v-html="$prismic.asHtml(content.text)" />
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 d-md-block d-none">
           <Media :image="content.image" class="clinics__image" />
         </div>
       </div>
@@ -18,7 +18,7 @@
       <div class="clinic__calculator">
         <h2 class="clinic__calculator__title">{{ $t('clinic.calculator.title') }}</h2>
         <div class="row">
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-6 offset-md-3 col-12">
             <Calculator />
           </div>
         </div>

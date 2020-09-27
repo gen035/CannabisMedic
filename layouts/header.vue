@@ -3,7 +3,7 @@
     <Message :message="getMessage" />
     <div class="header-navigation container">
       <div class="row align-items-center">
-        <div class="col-md-4">
+        <div class="col-md-4 col-8">
           <a href="/" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
             <Media
               classes="header__logo"
@@ -11,19 +11,20 @@
             />
           </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 d-md-block d-none">
           <Navigation :navigation="getNav" />
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 d-md-block d-none">
           <Button
             type="link"
             :url="this.$store.state.navigation.button_link.url"
             :text="this.$store.state.navigation.button_text"
           />
         </div>
+        <div class="col-4 d-md-none">Menu</div>
       </div>
     </div>
-    <Lang />
+    <!-- <Lang /> -->
   </header>
 </template>
 <script>
