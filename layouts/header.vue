@@ -11,17 +11,17 @@
             />
           </a>
         </div>
-        <div class="col-md-6 d-md-block d-none">
+        <div class="col-md-8 d-md-block d-none">
           <Navigation :navigation="getNav" />
         </div>
-        <div class="col-md-2 d-md-block d-none">
+        <!-- <div class="col-md-2 d-md-block d-none">
           <Button
             type="link"
             :url="this.$store.state.navigation.button_link.url"
             :text="this.$store.state.navigation.button_text"
           />
-        </div>
-        <div class="col-4 d-md-none">Menu</div>
+        </div> -->
+        <div class="col-4 d-md-none header-navigation--menu" v-on:click="open">Menu</div>
       </div>
     </div>
     <!-- <Lang /> -->
@@ -35,12 +35,22 @@
   import Message from '~/components/Message';
 
   export default {
+    data() {
+      return {
+        menuOpened: false
+      }
+    },
     computed: {
       getNav() {
         return this.$store.state.navigation.body
       },
       getMessage() {
         return this.$store.state.message
+      }
+    },
+    methods: {
+      toggle() {
+        this.menuOpened = true;
       }
     },
     components: {
