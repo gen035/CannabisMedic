@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="site">
+    <MiniCalculator />
     <Header />
     <Nuxt />
     <Footer />
@@ -8,11 +9,14 @@
 <script>
 import Header from './header';
 import Footer from './footer';
+import MiniCalculator from '~/components/MiniCalculator';
+
 export default {
   middleware: ['settings', 'navigation'],
   components: {
     Header,
-    Footer
+    Footer,
+    MiniCalculator
   }
 }
 </script>
