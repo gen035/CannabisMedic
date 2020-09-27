@@ -19,7 +19,7 @@
         <div class="col-md-4">
           <div class="footer__title">{{ $t('footer.follow') }}</div>
           <a class="footer__social__link" :href="$store.state.settings.facebook.url" target="_blank">
-            <i class="fa fa-facebook-official"></i>
+            <i class="fab fa-facebook"></i>
             Facebook
           </a>
         </div>

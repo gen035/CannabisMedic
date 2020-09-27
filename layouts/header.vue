@@ -3,7 +3,7 @@
     <Message :message="getMessage" />
     <div class="header-navigation container">
       <div class="row align-items-center">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <a href="/" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
             <Media
               classes="header__logo"
@@ -11,7 +11,7 @@
             />
           </a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-6">
           <Navigation :navigation="getNav" />
         </div>
         <div class="col-md-2">
