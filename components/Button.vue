@@ -2,6 +2,7 @@
   <button
     v-if="type === 'button'"
     class="button"
+    :class="{'is-disabled' : disabled}"
     type="button"
   >
     {{ text }}
@@ -13,6 +14,11 @@
 <script>
   export default {
     props: {
+      disabled: {
+        type: String,
+        require: false,
+        default: false
+      },
       text: {
         type: String,
         require: true

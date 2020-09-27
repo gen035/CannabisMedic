@@ -1,4 +1,15 @@
 export default {
+  agegate: {
+    date: "Date of birth",
+    day: "JJ",
+    month: "MM",
+    year: "AAAA",
+    enter: "Enter",
+    remember: {
+      text: "Remember me for 30 days",
+      disclaimer: "I confirm that this is not a shared device"
+    }
+  },
   calculator: {
     daily: "Daily grams:",
     plantInterior: "Interior plants:",

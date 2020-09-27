@@ -1,5 +1,6 @@
 <template>
   <div class="site">
+    <Agegate />
     <MiniCalculator />
     <Header />
     <Nuxt />
@@ -10,17 +11,20 @@
 import Header from './header';
 import Footer from './footer';
 import MiniCalculator from '~/components/MiniCalculator';
+import Agegate from '~/components/Agegate';
 
 export default {
   middleware: [
     'settings',
     'navigation',
-    'message'
+    'message',
+    'agegate'
   ],
   components: {
     Header,
     Footer,
-    MiniCalculator
+    MiniCalculator,
+    Agegate
   }
 }
 </script>

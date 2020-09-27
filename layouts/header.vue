@@ -49,7 +49,7 @@
       }
     },
     methods: {
-      toggle() {
+      open() {
         this.menuOpened = true;
       }
     },

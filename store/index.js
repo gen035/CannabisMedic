@@ -3,7 +3,8 @@ export const state = () => ({
   locale: 'fr',
   navigation: {},
   settings: {},
-  message: {}
+  message: {},
+  agegate: {}
 })
 
 export const mutations = {
@@ -20,5 +21,8 @@ export const mutations = {
   },
   SET_MESSAGE(state, message) {
     state.message = message;
+  },
+  SET_AGEGATE(state, agegate) {
+    state.agegate = agegate;
   }
 }

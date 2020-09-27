@@ -1,0 +1,88 @@
+.agegateWrapper
+  background-color: rgba(0, 0, 0, 0.8)
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  z-index: $z-index-10
+
+.agegate
+  padding: 32px
+  background-color: $white
+  border-radius: 20px
+  width: 95%
+  max-width: 400px
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+  text-align: center
+
+  .agegate-close
+    position: absolute
+    top: 0
+    left: 0
+    padding: 10px
+    font-size: 18px
+    color: $green
+    transition: color 250ms linear
+    cursor: pointer
+    &:hover
+      color: $green-light
+
+  .agegate-logo
+    display: block
+    margin: 0 auto 16px
+    max-width: 300px
+
+  .agegate-date--label
+    font-weight: $fw-bold
+    color: $green
+    margin-bottom: 5px
+    text-align: center
+
+  .agegate-date--input
+    display: flex
+    justify-content: center
+
+    input
+      border: 1px solid $green-light
+      padding: 12px
+      max-width: 50px
+      text-align: center
+      margin-right: 5px
+      font-size: 14px
+      &:last-child
+        max-width: 70px
+      &:focus
+        outline: none
+
+  .agegate-remember
+    display: flex
+    text-align: left
+    font-size: 12px!important
+    font-weight: $fw-bold
+    margin: 10px auto 0
+    max-width: 250px
+    &--disclaimer
+      font-weight: $fw-light
+      color: $green
+    label
+      margin-left: 15px
+    .custom-control-input:checked ~ .custom-control-label::before
+      border-color: $green
+      background-color: $green
+  .agegate-disclaimer
+    font-size: 12px
+    font-weight: $fw-light
+    max-width: 250px
+    display: block
+    margin: 0 auto
+
+  button
+    display: inline-block
+    margin: 20px auto
+    padding: 12px 20px
+    width: auto
+
