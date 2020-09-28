@@ -4,6 +4,7 @@
       <div class="row">
         <div class="col-md-4">
           <Media :image="$store.state.settings.logo_footer" class="footer__logo" />
+          <Newsletter />
         </div>
         <div class="col-md-4">
           <ul class="footer__nav" v-for="(item, index) in $store.state.navigation.body" :key="index">
@@ -30,10 +31,12 @@
 <script>
   import Media from '~/components/Media';
   import Link from '~/components/Link';
+  import Newsletter from '~/components/Newsletter';
   export default {
     components: {
       Link,
-      Media
+      Media,
+      Newsletter
     }
   }
 </script>

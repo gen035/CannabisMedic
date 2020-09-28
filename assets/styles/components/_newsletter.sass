@@ -1,0 +1,41 @@
+.newsletter
+  margin-top: 24px
+  &__title
+    color: $white
+    font-size: 18px
+    font-weight: $fw-light
+    margin-bottom: 12px
+  &__message
+    color: $white
+    font-weight: $fw-light
+    font-size: 12px
+    line-height: 1.2
+    a
+      color: $green-light
+      font-weight: $fw-bold
+  form
+    position: relative
+  input
+    border: 0
+    appearance: 
+    padding: 10px
+    border-radius: 5px
+    outline: none
+    font-family: $serif
+    width: 100%
+    padding-right: 50px
+    margin-bottom: 12px
+  button
+    height: 38px
+    position: absolute
+    right: 0
+    border-top-right-radius: 5px
+    border-bottom-right-radius: 5px
+    padding: 10px 15px
+    background-color: $green-light
+    i
+      color: $slate
+      transition: 250ms transform linear
+    &:hover
+      i
+        transform: translateX(5px)

@@ -35,5 +35,11 @@ export default {
   },
   footer: {
     follow: "Suivez-nous sur:"
+  },
+  mailchimp: {
+    title: "S\'inscrire à l'infolettre",
+    placeholder: "Votre email",
+    success: "Merci !",
+    loading: "Chargement..."
   }
 }

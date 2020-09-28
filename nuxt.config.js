@@ -52,7 +52,8 @@ export default {
   plugins: [
     '~/plugins/map.js',
     '~/plugins/axios.js',
-    '~/plugins/bootstrap.js'
+    '~/plugins/bootstrap.js',
+    '~/plugins/mailchimp.js'
   ],
   /*
   ** Nuxt.js modules

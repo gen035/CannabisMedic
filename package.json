@@ -22,6 +22,7 @@
     "nuxt-i18n": "^6.15.1",
     "prismic-nuxt": "^0.5.3",
     "sass-loader": "^10.0.1",
+    "vue-mailchimp-subscribe": "^1.1.0",
     "vue2-gmap-custom-marker": "^5.6.0",
     "vue2-google-maps": "^0.10.7"
   },

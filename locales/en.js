@@ -35,5 +35,11 @@ export default {
   },
   footer: {
     follow: "Follow us on:"
+  },
+  mailchimp: {
+    title: "Subscribe to our newsletter",
+    placeholder: "Your email",
+    success: "Thank you!",
+    loading: "Loading..."
   }
 }
