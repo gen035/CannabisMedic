@@ -58,6 +58,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'cookie-universal-nuxt',
     ['prismic-nuxt', {
       endpoint: 'https://cannabismedic.cdn.prismic.io/api/v2',
       linkResolver: function(doc, ctx) {

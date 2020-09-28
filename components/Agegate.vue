@@ -1,5 +1,5 @@
 <template>
-  <div class="agegateWrapper">
+  <div class="agegateWrapper" v-if="showAgegate">
     <div class="agegate">
       <div class="agegate-close" v-on:click="close">
         <i class="fas fa-times-circle"></i>
@@ -20,7 +20,7 @@
           <div class="agegate-remember--disclaimer">{{ $t('agegate.remember.disclaimer') }}</div>
         </b-form-checkbox>
       </div>
-      <Button type="button" :text="$t('agegate.enter')" :disabled="!oldEnough" />
+      <Button type="button" :text="$t('agegate.enter')" :disabled="!oldEnough" v-on:click.native="enter" />
       <div class="agegate-disclaimer">{{ agegate.disclaimer }}</div>
     </div>
   </div>
@@ -29,12 +29,17 @@
   import Button from '~/components/Button';
   import Media from '~/components/Media';
   export default {
+    created() {
+      const agegate = this.$store.state.agegate;
+      const hasCookie = this.$cookies.get(agegate.cookie_name);
+
+      if(!agegate || hasCookie) {
+        this.showAgegate = false;
+      }
+    },
     data() {
-      const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      const maxDate = new Date(today);
-      maxDate.setYear(maxDate.getYear() - 21);
       return {
+        showAgegate: true,
         agegate: this.$store.state.agegate,
         logo: this.$store.state.settings.logo,
         date: {
@@ -56,12 +61,28 @@
     },
     methods: {
       close() {
-        this.closed = true;
+        this.showAgegate = false;
       },
       isOldEnough() {
         const { day, month, year } = this.date;
-        if(day && month && year) {
+        if((day && day !== '') && (month && month !== '') && (year && year > 1900 && year !== '')) {
           this.oldEnough = new Date(year + 21, month -1, day) <= new Date();
+        }
+      },
+      enter() {
+        if(this.remember) {
+          // Set cookie
+          const expires = this.agegate.cookie_duration;
+          this.$cookies.set(
+            this.agegate.cookie_name,
+            true,
+            {
+              maxAge: expires * 24 * 60 * 60
+            }
+          );
+          this.close();
+        }else{
+          this.close();
         }
       }
     },
