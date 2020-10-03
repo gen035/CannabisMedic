@@ -1,7 +1,7 @@
 <template>
   <div class="clinicBlock col-md-4" :class="'clinicBlock--' + block.name1">
     <i :class="block.icon" />
-    <h2>{{ block.title }}</h2>
+    <h3>{{ block.title }}</h3>
     <div v-html="$prismic.asHtml(block.text1)" />
   </div>
 </template>

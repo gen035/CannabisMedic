@@ -2,7 +2,7 @@
   <div class="category">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="block__title">{{category.title}}</h1>
+        <h2 class="block__title">{{category.title}}</h2>
         <div v-html="$prismic.asHtml(category.text1)" />
       </div>
     </div>
