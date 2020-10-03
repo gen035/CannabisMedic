@@ -9,6 +9,36 @@
   font-size: 14px
   font-weight: $fw-light
   margin: 0 10px
+  position: relative
   a
+    padding: 20px 0
     &.active
       font-weight: $fw-bold
+  &:hover
+    .sub-nav
+      max-height: 200px
+
+.sub-nav
+  position: absolute
+  top: 34px
+  background-color: $green
+  color: $white
+  text-align: left
+  z-index: 900
+  border-top-right-radius: 20px
+  border-bottom-left-radius: 20px
+  overflow: hidden
+  max-height: 0
+  li
+    transition: background-color 250ms linear
+    &:first-child
+      border-top-right-radius: 20px
+    &:last-child
+      border-bottom-left-radius: 20px
+    &:hover
+      background-color: $slate
+    a
+      display: block
+      padding: 10px 20px
+      width: 100%
+

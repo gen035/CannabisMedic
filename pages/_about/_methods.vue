@@ -80,8 +80,8 @@
     },
     nuxtI18n: {
       paths: {
-        fr: '/a-propos-du-cannabis/methodes',
-        en: '/about-cannabis/methods'
+        fr: '/a-propos-du-cannabis/methodes-de-consommation',
+        en: '/about-cannabis/methods-of-consumption'
       }
     },
   }

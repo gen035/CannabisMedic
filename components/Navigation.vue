@@ -7,6 +7,15 @@
           :link="item.primary.item_link"
           :external="item.primary.item_link_external"
         />
+        <ul class="sub-nav" v-if="item.items">
+          <li v-for="(subitem, index) in item.items" :key="index">
+            <Link
+              :text="subitem.text"
+              :link="subitem.link"
+              :external="subitem.item_link_external"
+            />
+          </li>
+        </ul>
       </li>
     </ul>
   </nav>

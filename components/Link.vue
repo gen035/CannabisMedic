@@ -3,7 +3,7 @@
     v-if="!external"
     :to="localePath(link)"
     active-class="active"
-    exact
+    :exact="isHome"
   >
     {{ text }}
   </NuxtLink>
@@ -34,6 +34,9 @@
     computed: {
       getTarget() {
         return this.external ? '_blank' : '_self'
+      },
+      isHome() {
+        return this.link === '/'
       }
     }
   }
