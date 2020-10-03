@@ -2,13 +2,13 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <Media :image="$store.state.settings.logo_footer" class="footer__logo" />
+        <div class="col-md-4 footer-newsletter">
+          <Media :image="$store.state.settings.logo_footer" class="footer-logo" />
           <Newsletter />
         </div>
-        <div class="col-md-4">
-          <ul class="footer__nav" v-for="(item, index) in $store.state.navigation.body" :key="index">
-            <li class="footer__nav__item">
+        <div class="col-md-4 footer-nav">
+          <ul>
+            <li v-for="(item, index) in $store.state.navigation.body" :key="index">
               <Link
                 :link="item.primary.item_link"
                 :text="item.primary.text"
@@ -17,9 +17,9 @@
             </li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <div class="footer__title">{{ $t('footer.follow') }}</div>
-          <a class="footer__social__link" :href="$store.state.settings.facebook.url" target="_blank">
+        <div class="col-md-4 footer-social">
+          <div class="footer-title">{{ $t('footer.follow') }}</div>
+          <a class="footer-social-link" :href="$store.state.settings.facebook.url" target="_blank">
             <i class="fab fa-facebook"></i>
             Facebook
           </a>

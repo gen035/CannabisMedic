@@ -34,7 +34,7 @@ export default {
     duration: "Durée des effets*"
   },
   footer: {
-    follow: "Suivez-nous sur:"
+    follow: "Suivez-nous"
   },
   mailchimp: {
     title: "S\'inscrire à l'infolettre",

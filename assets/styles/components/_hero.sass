@@ -1,12 +1,16 @@
 .hero
   background-color: $green-transparent
-  border-bottom-right-radius: 60px
-  border-bottom-left-radius: 60px
+  border-bottom-right-radius: 30px
+  border-bottom-left-radius: 30px
   padding: 64px 0 32px 0
+  @media(min-width: $bp-md)
+    border-bottom-right-radius: 60px
+    border-bottom-left-radius: 60px
   img
-    max-width: 75%
+    max-width: 150px
     margin: 14px auto 0
     display: block
+    width: 100%
     @media(min-width: $bp-md)
       margin: 0 auto
       max-width: 100%

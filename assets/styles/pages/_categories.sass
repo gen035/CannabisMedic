@@ -15,12 +15,24 @@
     width: 100%
 
 .categories__items
-  margin-top: 24px
+  margin-top: 32px
 
 .category
-  margin-bottom: 24px
-  &::last-child
+  margin-bottom: 64px
+  position: relative
+  &:after
+    content: ''
+    background-color: $green
+    position: absolute
+    width: 150px
+    height: 1px
+    left: 50%
+    transform: translateX(-50%)
+    bottom: -32px
+  &:last-child
     margin-bottom: 0
+    &:after
+      display: none
   h1
     color: $green
     font-size: 18px

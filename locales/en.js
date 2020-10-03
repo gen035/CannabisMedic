@@ -34,7 +34,7 @@ export default {
     duration: "Duration*"
   },
   footer: {
-    follow: "Follow us on:"
+    follow: "Follow us"
   },
   mailchimp: {
     title: "Subscribe to our newsletter",

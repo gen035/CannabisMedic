@@ -15,6 +15,8 @@
           <ClinicBlock :block="item" :key="index" />
         </template>
       </div>
+    </section>
+    <section class="clinics clinics--dark container-fluid">
       <div class="clinic__calculator">
         <h2 class="clinic__calculator__title">{{ $t('clinic.calculator.title') }}</h2>
         <div class="row">

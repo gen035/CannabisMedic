@@ -3,21 +3,43 @@
   padding: 24px
   width: 100%
 
-.footer__logo
+.footer-logo
+  display: block
+  margin: 0 auto
   max-width: 250px
+  @media(min-width: $bp-md)
+    margin: 0
 
-.footer__nav
-  color: $white
-  text-transform: uppercase
-  font-weight: $fw-light
+.footer-newsletter
+  margin-bottom: 24px
+  @media(min-width: $bp-md)
+    margin-bottom: 0
+
+.footer-nav
+  display: flex
+  align-items: center
+  ul
+    color: $white
+    text-transform: uppercase
+    font-weight: $fw-light
+    text-align: center
+    width: 100%
+    li
+      padding: 5px 0
+
+.footer-social
   text-align: center
+  margin-top: 24px
+  @media(min-width: $bp-md)
+    text-align: right
+    margin-top: 0
 
-.footer__title
+.footer-title
   letter-spacing: 1px
   color: $white
   font-weight: $fw-bold
   text-transform: uppercase
   margin-bottom: 10px
 
-.footer__social__link
+.footer-social-link
   color: $white

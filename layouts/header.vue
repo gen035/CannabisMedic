@@ -3,15 +3,15 @@
     <Message :message="getMessage" />
     <div class="header-navigation container">
       <div class="row align-items-center">
-        <div class="col-md-4 col-8">
+        <div class="col-lg-3 col-md-5 col-8">
           <a href="/" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
             <Media
-              classes="header__logo"
+              classes="header-logo"
               :image="this.$store.state.settings.logo"
             />
           </a>
         </div>
-        <div class="col-md-8 d-md-block d-none">
+        <div class="col-lg-8 col-md-7 d-md-block d-none">
           <Navigation :navigation="getNav" />
         </div>
         <!-- <div class="col-md-2 d-md-block d-none">
