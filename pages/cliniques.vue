@@ -36,6 +36,7 @@
   export default {
     async asyncData({ app, error, store}) {
       const locale = store.state.locale;
+      const default_image = store.state.settings.default_og_image;
       let content = []
       
       await app.$prismic.api.query(
@@ -54,7 +55,8 @@
       if (content) {
         return {
           content,
-          hero
+          hero,
+          default_image
         }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
@@ -62,12 +64,22 @@
     },
     head() {
       return {
-        //title: this.$prismic.asText(this.seo.title),
+        title: this.content.seo_title,
         link: [
-        //{ rel: 'canonical', href: `https://<DOMAIN>${this.$prismic.linkResolver(this.document)}` }
+        //{ rel: 'canonical', href: window.location.href }
         ],
         meta: [
-          //{ hid: 'description', name: 'description', content: this.$prismic.asText(this.seo.description) }
+          { hid: 'description', name: 'description', content: this.content.seo_description },
+          { hid: 'og:type', property: 'og:type', content: 'website'},
+          { hid: 'og:url', property: 'og:url', content: ''},
+          { hid: 'og:title', property: 'og:title', content: this.content.seo_title},
+          { hid: 'og:description', property: 'og:description', content: this.content.seo_description},
+          { hid: 'og:image', property: 'og:image', content: this.content.seo_image.url ? this.content.seo_image.url : this.default_image.url},
+          { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image'},
+          { hid: 'twitter:url', property: 'twitter:url', content: ''},
+          { hid: 'twitter:title', property: 'twitter:title', content: this.content.seo_title},
+          { hid: 'twitter:description', property: 'twitter:description', content: this.content.seo_description},
+          { hid: 'twitter:image', property: 'twitter:image', content: this.content.seo_image.url ? this.content.seo_image.url : this.default_image.url}
         ]
       }
     },
