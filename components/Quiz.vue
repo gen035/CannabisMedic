@@ -3,7 +3,7 @@
     <Media :image="quiz.image" class="quiz-image" />
     <h2>{{quiz.title}}</h2>
     <div v-html="$prismic.asHtml(quiz.description1)" />
-    <div class="button">{{$t('quiz.participate')}}</div>
+    <div class="button">{{$t('quizzes.participate')}}</div>
   </a>
 </template>
 <script>

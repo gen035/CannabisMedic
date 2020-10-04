@@ -1,14 +1,14 @@
 <template>
   <div>
     <Hero :hero-data="hero.data" />
-    <div class="quizzes container">
-      <div v-if="content.body[0].items.length <= 0" class="row quizzes-empty">
-        <h2>{{ $t('quizzes.empty')}}</h2>
+    <div class="contests container">
+      <div v-if="content.body[0].items.length <= 0" class="row contests-empty">
+        <h2>{{ $t('contests.empty')}}</h2>
       </div>
       <div class="row">
         <template v-for="(item, index) in content.body[0].items">
-          <div class="quizzes-item col-lg-3 col-md-4 col-sm-6" :key="index" >
-            <Quiz :quiz="item" />
+          <div class="contests-item col-lg-3 col-md-4 col-sm-6" :key="index" >
+            <Contest :contest="item" />
           </div>
         </template>
       </div>
@@ -17,7 +17,7 @@
 </template>
 <script>
   import Hero from '~/components/Hero';
-  import Quiz from '~/components/Quiz';
+  import Contest from '~/components/Contest';
   export default {
     async asyncData({ app, error, store}) {
       const locale = store.state.locale;
@@ -26,7 +26,7 @@
       let content = []
       
       await app.$prismic.api.query(
-        app.$prismic.predicates.at('document.type', 'quiz'), {
+        app.$prismic.predicates.at('document.type', 'contest'), {
             lang: `${locale}-ca`
           }
         ).then((response) => {
@@ -72,12 +72,12 @@
     },
     components: {
       Hero,
-      Quiz
+      Contest
     },
     nuxtI18n: {
       paths: {
-        fr: '/quizs',
-        en: '/quizzes'
+        fr: '/concours',
+        en: '/contests'
       }
     },
   }
