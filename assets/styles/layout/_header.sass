@@ -8,7 +8,16 @@
 .header-logo
   display: block
   max-width: 210px
-  margin: 5px 0
+  margin: 0
+  @media(min-width: $bp-md)
+    margin: 0 auto 10px auto
+  @media(min-width: $bp-lg)
+    margin: 5px 0
+
+.header-navigation
+  padding: 8px
+  @media(min-width: $bp-lg)
+    padding: 0
 
 .header-navigation--menu
   text-align: right
