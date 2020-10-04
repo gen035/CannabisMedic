@@ -1,13 +1,13 @@
 <template>
   <nav class="nav">
-    <ul class="nav__items">
-      <li class="nav__item" v-for="(item, index) in navigation" :key="index">
+    <ul class="nav-items">
+      <li class="nav-item" v-for="(item, index) in navigation" :key="index">
         <Link
           :text="item.primary.text"
           :link="item.primary.item_link"
           :external="item.primary.item_link_external"
         />
-        <ul class="sub-nav" v-if="item.items">
+        <ul class="sub-nav" v-if="item.items.length > 0">
           <li v-for="(subitem, index) in item.items" :key="index">
             <Link
               :text="subitem.text"

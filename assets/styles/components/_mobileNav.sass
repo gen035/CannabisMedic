@@ -1,0 +1,41 @@
+.mobile-nav
+  position: absolute
+  top: 0
+  width: 100%
+  background-color: $white
+  padding: 10px
+  height: 100vh
+  right: -100%
+  font-weight: $fw-light
+  transition: right 250ms linear
+  &.is-opened
+    box-shadow: 0px 3px 23px -4px rgba(184,184,184,1)
+    right: 0
+
+.mobile-nav-close
+  font-size: 18px
+  color: $green
+  i
+    padding: 10px 0
+.mobile-nav-item
+  border-bottom: 1px solid $green-light
+  a
+    display: block
+    padding: 10px 0
+
+.mobile-subnav
+  padding-left: 20px
+  font-size: 14px
+
+.mobile-nav-rdv
+  margin-top: 10px
+
+.mobile-nav-social
+  margin-top: 10px
+  a
+    color: $green
+
+.mobile-nav-social--title
+  font-weight: $fw-bold
+  color: $green
+  margin-bottom: 10px

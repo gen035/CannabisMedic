@@ -41,5 +41,8 @@ export default {
     placeholder: "Votre email",
     success: "Merci !",
     loading: "Chargement..."
+  },
+  nav: {
+    rdv: 'Rendez-vous'
   }
 }
