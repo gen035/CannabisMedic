@@ -45,7 +45,11 @@ export default {
   nav: {
     rdv: "Rendez-vous"
   },
-  quiz: {
+  quizzes: {
+    empty: "Aucun quiz pour l'instant",
+    participate: "Participer"
+  },
+  contests: {
     empty: "Aucun quiz pour l'instant",
     participate: "Participer"
   }
