@@ -1,12 +1,54 @@
 <template>
   <div>
-    <Hero :hero-data="hero.data" />
+    <!-- <Hero :hero-data="hero.data" /> -->
+    <div class="contact-map">
+      <GmapMap
+        :center="{
+          lat: centerLat,
+          lng: centerLong
+        }"
+        :zoom="7"
+        id="map"
+        map-type-id="roadmap"
+      >
+        <gmap-custom-marker
+          :key="index"
+          v-for="(location, index) in content.body[0].items"
+          :marker="{
+            lat: location.geo.latitude,
+            lng: location.geo.longitude
+          }"
+          @click.native="toggleInfoWindow(location.geo.latitude, location.geo.longitude, index)"
+        >
+          <img src="//prismic-io.s3.amazonaws.com/cannabismedic/ddfc2045-4d39-4fc7-8ab2-4c43ee171fa5_marker.svg" height="30"/>
+        </gmap-custom-marker>
+        <GmapInfoWindow
+          :options="infoOptions"
+          :position="infoWindowPos"
+          :opened="infoWinOpen"
+          @close="infoWinOpen = false"
+        >
+          {{ this.infoContent }}
+        </GmapInfoWindow>
+      </GmapMap>
+    </div>
+    <div class="contact-locations container">
+      <h1 class="contact-title" v-if="content.title">{{content.title}}</h1>
+      <div class="row">
+        <template v-for="(item, index) in content.body[0].items">
+          <div class="contact-location col-lg-3 col-md-4 col-sm-6" :key="index" >
+            <Location :location="item" />
+          </div>
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import Block from '~/components/Block';
   import Hero from '~/components/Hero';
+  import Location from '~/components/Location';
+  import GmapCustomMarker from 'vue2-gmap-custom-marker';
 
   export default {
     async asyncData({ app, error, store}) {
@@ -60,9 +102,42 @@
         ]
       }
     },
+    data() {
+      return {
+        centerLat: 45.501690,
+        centerLong: -73.567253,
+        infoWindowOpen: false,
+        infoOptions: {
+          pixelOffset: {
+            width: 0,
+            height: -35
+          }
+        },
+        infoWindowPos: null,
+        currentMidx: null,
+        infoWinOpen: false,
+        infoContent: ''
+      }
+    },
+    methods: {
+      toggleInfoWindow(lat, long, index) {
+
+        this.infoWindowPos = {lat: lat, lng: long};
+        this.infoContent = this.content.body[0].items[index].location_name;
+
+        if (this.currentMidx == index) {
+          this.infoWinOpen = !this.infoWinOpen;
+        }
+        else {
+          this.infoWinOpen = true;
+          this.currentMidx = index;
+        }
+      }
+    },
     components: {
-      Block,
-      Hero
+      Hero,
+      GmapCustomMarker,
+      Location
     },
     nuxtI18n: {
       paths: {
