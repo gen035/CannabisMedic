@@ -9,6 +9,7 @@
           :text="item.primary.text"
           :link="item.primary.item_link"
           :external="item.primary.item_link_external"
+          @click.native="closeNav"
         />
         <ul class="mobile-subnav" v-if="item.items.length > 0">
           <li v-for="(subitem, index) in item.items" :key="index">
@@ -16,6 +17,7 @@
               :text="subitem.text"
               :link="subitem.link"
               :external="subitem.item_link_external"
+              @click.native="closeNav"
             />
           </li>
         </ul>
