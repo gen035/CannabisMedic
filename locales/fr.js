@@ -43,6 +43,10 @@ export default {
     loading: "Chargement..."
   },
   nav: {
-    rdv: 'Rendez-vous'
+    rdv: "Rendez-vous"
+  },
+  quiz: {
+    empty: "Aucun quiz pour l'instant",
+    participate: "Participer"
   }
 }
