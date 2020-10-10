@@ -8,7 +8,7 @@
       <div class="row">
         <template v-for="(item, index) in content.body[0].items">
           <div class="contests-item col-lg-3 col-md-4 col-sm-6" :key="index" >
-            <Contest :contest="item" />
+            <Contest :contest="item" :image="default_image_contest" />
           </div>
         </template>
       </div>
@@ -22,6 +22,7 @@
     async asyncData({ app, error, store}) {
       const locale = store.state.locale;
       const default_image = store.state.settings.default_og_image;
+      const default_image_contest = store.state.settings.default_contest_image;
       const domain = store.state.settings.domain;
       let content = []
       
@@ -43,7 +44,8 @@
           content,
           hero,
           domain,
-          default_image
+          default_image,
+          default_image_contest
         }
       } else {
         error({ statusCode: 404, message: 'Page not found' })
