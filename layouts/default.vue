@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Agegate />
     <MiniCalculator />
     <Header />
-    <Nuxt />
+    <Nuxt class="content-wrapper"/>
     <Footer />
   </div>
 </template>
