@@ -4,7 +4,7 @@
       <div class="header-navigation container">
         <div class="row align-items-center">
           <div class="col-lg-3 col-md-12 col-8">
-            <a href="/" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
+            <a :href="getHome" title="Cannabis Medic home" data-track="" data-track-category="nav" data-track-action="click" data-track-label="Logo">
               <Media
                 classes="header-logo"
                 :image="this.$store.state.settings.logo"
@@ -13,6 +13,8 @@
           </div>
           <div class="col-lg-9 col-md-12 d-md-block d-none">
             <Navigation :navigation="getNav" />
+            <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+<nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
           </div>
           <!-- <div class="col-md-2 d-md-block d-none">
             <Button
@@ -48,6 +50,15 @@
       },
       getMessage() {
         return this.$store.state.message
+      },
+      getHome() {
+        const locale = this.$store.state.i18n.locale;
+
+        if(locale === 'fr') {
+          return '/';
+        }
+
+        return '/en';
       }
     },
     methods: {

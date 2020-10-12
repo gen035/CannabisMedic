@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     v-if="!external"
-    :to="localePath(link)"
+    :to="link"
     active-class="active"
     :exact="isHome"
   >
@@ -36,7 +36,7 @@
         return this.external ? '_blank' : '_self'
       },
       isHome() {
-        return this.link === '/'
+        return this.link === '/' || this.link === '/en';
       }
     }
   }

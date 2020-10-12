@@ -1,13 +1,13 @@
 export default {
   agegate: {
     date: "Date of birth",
-    day: "JJ",
+    day: "DD",
     month: "MM",
-    year: "AAAA",
+    year: "YYYY",
     enter: "Enter",
     remember: {
       text: "Remember me for 30 days",
-      disclaimer: "I confirm that this is not a shared device"
+      disclaimer: "I confirm this is not a shared device"
     }
   },
   calculator: {
@@ -15,8 +15,8 @@ export default {
     plantInterior: "Interior plants:",
     plantExterior: "Exterior plants:",
     stock: "Grams in stock: ",
-    interior: "Intérieur",
-    exterior: "Extérieur"
+    interior: "Interior",
+    exterior: "Exterior"
   },
   category: {
     benefits: "Benefits",
@@ -50,7 +50,7 @@ export default {
     participate: "Participate"
   },
   contests: {
-    empty: "Aucun quiz pour l'instant",
-    participate: "Participer"
+    empty: "No contests at the moment",
+    participate: "Participate"
   }
 }

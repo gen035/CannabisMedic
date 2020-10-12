@@ -37,7 +37,7 @@
 
   export default {
     async asyncData({ app, error, store}) {
-      const locale = store.state.locale;
+      const locale = store.state.i18n.locale;
       const default_image = store.state.settings.default_og_image;
       const domain = store.state.settings.domain;
       let content = []

@@ -66,7 +66,10 @@ export default {
       ],
       langDir: 'locales/',
       defaultLocale: 'fr',
-      lazy: true
+      lazy: true,
+      vuex: {
+        moduleName: 'i18n', syncLocale: true, syncMessages: false, syncRouteParams: true
+      }
     }],
     ['@nuxtjs/google-analytics', {
       id: ''

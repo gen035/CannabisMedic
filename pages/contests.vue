@@ -20,7 +20,7 @@
   import Contest from '~/components/Contest';
   export default {
     async asyncData({ app, error, store}) {
-      const locale = store.state.locale;
+      const locale = store.state.i18n.locale;
       const default_image = store.state.settings.default_og_image;
       const default_image_contest = store.state.settings.default_contest_image;
       const domain = store.state.settings.domain;

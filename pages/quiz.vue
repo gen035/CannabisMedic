@@ -20,7 +20,7 @@
   import Quiz from '~/components/Quiz';
   export default {
     async asyncData({ app, error, store}) {
-      const locale = store.state.locale;
+      const locale = store.state.i18n.locale;
       const default_image = store.state.settings.default_og_image;
       const default_image_quiz = store.state.settings.default_quiz_image;
       const domain = store.state.settings.domain;
