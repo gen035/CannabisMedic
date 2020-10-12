@@ -31,10 +31,15 @@
         Facebook
       </a>
     </div>
+    <div class="mobile-nav-lang">
+      {{$t('lang.text')}}<Lang />
+    </div>
   </nav>
 </template>
 <script>
   import Link from './Link';
+  import Lang from './Lang';
+
   export default {
     props: {
       navigation: {
@@ -68,7 +73,8 @@
       }
     },
     components: {
-      Link
+      Link,
+      Lang
     }
   }
 </script>

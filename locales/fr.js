@@ -52,5 +52,8 @@ export default {
   contests: {
     empty: "Aucun quiz pour l'instant",
     participate: "Participer"
+  },
+  lang: {
+    text: "Switch to "
   }
 }

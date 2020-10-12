@@ -13,8 +13,6 @@
           </div>
           <div class="col-lg-9 col-md-12 d-md-block d-none">
             <Navigation :navigation="getNav" />
-            <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-<nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
           </div>
           <!-- <div class="col-md-2 d-md-block d-none">
             <Button

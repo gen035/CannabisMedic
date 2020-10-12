@@ -23,6 +23,7 @@
             <i class="fab fa-facebook"></i>
             Facebook
           </a>
+          <Lang />
         </div>
       </div>
     </div>
@@ -32,8 +33,11 @@
   import Media from '~/components/Media';
   import Link from '~/components/Link';
   import Newsletter from '~/components/Newsletter';
+  import Lang from '~/components/Lang';
+
   export default {
     components: {
+      Lang,
       Link,
       Media,
       Newsletter

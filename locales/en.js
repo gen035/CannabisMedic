@@ -52,5 +52,8 @@ export default {
   contests: {
     empty: "No contests at the moment",
     participate: "Participate"
+  },
+  lang: {
+    text: "Voir le site en "
   }
 }
