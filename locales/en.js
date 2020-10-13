@@ -1,9 +1,6 @@
 export default {
   agegate: {
-    date: "Date of birth",
-    day: "DD",
-    month: "MM",
-    year: "YYYY",
+    placeholder: "Date of birth",
     enter: "Enter",
     remember: {
       text: "Remember me for 30 days",

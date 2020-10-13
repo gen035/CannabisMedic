@@ -9,11 +9,9 @@
         :image="this.$store.state.settings.logo"
       />
       <div class="agegate-date">
-        <div class="agegate-date--label">{{ $t('agegate.date') }}</div>
+        <div class="agegate-date--label">{{ $t('agegate.placeholder') }}</div>
         <div class="agegate-date--input">
-          <input type="text" min="1" max="31" v-model.number="date.day" :placeholder="$t('agegate.day')"/>
-          <input type="text" min="1" max="12" v-model.number="date.month" :placeholder="$t('agegate.month')"/>
-          <input type="text" min="0" v-model.number="date.year" :placeholder="$t('agegate.year')"/>
+          <input type="date" v-model="date" />
         </div>
         <b-form-checkbox v-model="remember" size="lg" class="agegate-remember">
           <div class="agegate-remember--text">{{ $t('agegate.remember.text') }}</div>
@@ -42,11 +40,7 @@
         showAgegate: true,
         agegate: this.$store.state.agegate,
         logo: this.$store.state.settings.logo,
-        date: {
-          year: null,
-          month: null,
-          day: null,
-        },
+        date: null,
         oldEnough: false,
         remember: false
       }
@@ -64,10 +58,10 @@
         this.showAgegate = false;
       },
       isOldEnough() {
-        const { day, month, year } = this.date;
-        if((day && day !== '') && (month && month !== '') && (year && year > 1900 && year !== '')) {
-          this.oldEnough = new Date(year + 21, month -1, day) <= new Date();
-        }
+        const { date } = this;
+        const diff_ms = Date.now() - new Date(date).getTime();
+        const age_dt = new Date(diff_ms);
+        this.oldEnough = Math.abs(age_dt.getUTCFullYear() - 1970) > 17;
       },
       enter() {
         if(this.remember) {
