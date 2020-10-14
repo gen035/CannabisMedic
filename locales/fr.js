@@ -1,5 +1,6 @@
 export default {
   agegate: {
+    enter: "Entrer",
     placeholder: "Date de naissance",
     remember: {
       text: "Rester connecté durant 30 jours",
