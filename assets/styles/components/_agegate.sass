@@ -17,19 +17,6 @@
   top: 50%
   left: 50%
   transform: translateX(-50%) translateY(-50%)
-  text-align: center
-
-  .agegate-close
-    position: absolute
-    top: 0
-    left: 0
-    padding: 10px
-    font-size: 18px
-    color: $green
-    transition: color 250ms linear
-    cursor: pointer
-    &:hover
-      color: $green-light
 
   .agegate-logo
     display: block
@@ -40,8 +27,8 @@
   .agegate-date--label
     font-weight: $fw-bold
     color: $green
-    margin-bottom: 5px
-    text-align: center
+    margin: 15px 0 5px
+    text-align: left
 
   .agegate-date--input
     display: flex
@@ -54,6 +41,8 @@
       font-size: 14px
       width: 100%
       appearance: none
+      text-align: left
+      color: $green
       &:focus
         outline: none
 
@@ -63,7 +52,7 @@
     font-size: 12px!important
     font-weight: $fw-bold
     margin: 10px auto 0
-    max-width: 250px
+    padding: 0 0 0 15px
     &--disclaimer
       font-weight: $fw-light
       color: $green
@@ -80,9 +69,9 @@
     display: block
     margin: 0 auto
 
-  button
-    display: inline-block
+  .agegate-button
+    display: block
     margin: 20px auto
     padding: 12px 20px
-    width: auto
+    max-width: 105px
 

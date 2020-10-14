@@ -7,13 +7,13 @@
   >
     {{ text }}
   </NuxtLink>
-  <!-- <a
+  <a
     v-else-if="external"
     :href="link"
     target="_blank"
   >
     {{text}}
-  </a> -->
+  </a>
 </template>
 <script>
   export default {

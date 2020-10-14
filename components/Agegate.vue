@@ -1,9 +1,6 @@
 <template>
   <div class="agegateWrapper" v-if="showAgegate">
     <div class="agegate">
-      <div class="agegate-close" v-on:click="close">
-        <i class="fas fa-times-circle"></i>
-      </div>
       <Media
         classes="agegate-logo"
         :image="this.$store.state.settings.logo"
@@ -18,7 +15,7 @@
           <div class="agegate-remember--disclaimer">{{ $t('agegate.remember.disclaimer') }}</div>
         </b-form-checkbox>
       </div>
-      <Button type="button" :text="$t('agegate.enter')" :disabled="!oldEnough" v-on:click.native="enter" />
+      <Button class="agegate-button" type="button" :text="$t('agegate.enter')" :disabled="!oldEnough" v-on:click.native="enter" />
       <div class="agegate-disclaimer">{{ agegate.disclaimer }}</div>
     </div>
   </div>
