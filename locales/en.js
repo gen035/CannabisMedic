@@ -52,5 +52,12 @@ export default {
   },
   lang: {
     text: "Voir le site en "
+  },
+  error: {
+    notFound: {
+      title: "Page Not Found"
+    },
+    generic: "An error occured",
+    home: "Homepage"
   }
 }

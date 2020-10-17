@@ -52,5 +52,12 @@ export default {
   },
   lang: {
     text: "Switch to "
+  },
+  error: {
+    notFound: {
+      title: "Page Introuvable"
+    },
+    generic: "Une erreure est survenue",
+    home: "Accueil"
   }
 }
