@@ -7,8 +7,9 @@
       <p v-if="location.suite">{{location.suite}}</p>
       <p v-if="location.phone">{{location.phone}}</p>
     </div>
-    <div v-if="location.phone" class="location-phone">
-      <a :href="`tel:${formatPhone(location.phone)}`"><i class="fas fa-phone"></i></a>
+    <div v-if="location.phone || location.email" class="location-contact">
+      <a v-if="location.phone" :href="`tel:${formatPhone(location.phone)}`"><i class="fas fa-phone"></i></a>
+      <a v-if="location.email" :href="`mailto:${location.email}`"><i class="far fa-envelope-open"></i></a>
     </div>
   </div>
 </template>

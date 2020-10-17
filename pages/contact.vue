@@ -13,7 +13,7 @@
       >
         <gmap-custom-marker
           :key="index"
-          v-for="(location, index) in content.body[0].items"
+          v-for="(location, index) in content.body[0].items.filter(location => !location.hide)"
           :marker="{
             lat: location.geo.latitude,
             lng: location.geo.longitude
@@ -35,7 +35,7 @@
     <div class="contact-locations container">
       <h1 class="contact-title" v-if="content.title">{{content.title}}</h1>
       <div class="row">
-        <template v-for="(item, index) in content.body[0].items">
+        <template v-for="(item, index) in content.body[0].items.filter(location => !location.hide)">
           <div class="contact-location col-lg-3 col-md-4 col-sm-6" :key="index" >
             <Location :location="item" />
           </div>
