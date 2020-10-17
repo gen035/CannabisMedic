@@ -7,7 +7,7 @@
   >
     {{ text }}
   </button>
-  <a :href="url" v-else class="button button--link">
+  <a :href="url" :target="newTab ? '_blank' : '_self'" v-else class="button button--link">
     {{ text }}
   </a>
 </template>
@@ -26,6 +26,11 @@
       type: {
         type: String,
         require: true
+      },
+      newTab: {
+        type: Boolean,
+        require: false,
+        default: false
       },
       url: {
         type: String,
