@@ -47,7 +47,7 @@ export default {
     participate: "Participer"
   },
   contests: {
-    empty: "Aucun quiz pour l'instant",
+    empty: "Aucun concours pour l'instant",
     participate: "Participer"
   },
   lang: {
