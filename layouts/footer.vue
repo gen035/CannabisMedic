@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-4 footer-nav">
           <ul>
-            <li v-for="(item, index) in $store.state.navigation.body" :key="index">
+            <li v-for="(item, index) in $store.state.navigation.body.filter(item => !item.primary.hide)" :key="index">
               <Link
                 :link="item.primary.item_link"
                 :text="item.primary.text"
