@@ -23,7 +23,7 @@
             <i class="fab fa-facebook"></i>
             Facebook
           </a>
-          <Lang />
+          <Lang :showGloble="true" />
         </div>
       </div>
     </div>
