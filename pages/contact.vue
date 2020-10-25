@@ -141,8 +141,8 @@
     },
     nuxtI18n: {
       paths: {
-        fr: '/contact',
-        en: '/contact'
+        fr: '/succursales',
+        en: '/branches'
       }
     },
   }
