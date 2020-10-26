@@ -59,5 +59,16 @@ export default {
     },
     generic: "Une erreure est survenue",
     home: "Accueil"
+  },
+  appointment: {
+    tab: "Rendez-vous",
+    title: "Demande de rendez-vous",
+    fields: {
+      name: "Nom",
+      email: "Email",
+      branches: "Succursale",
+      message: "Message",
+      send: "Envoyer"
+    }
   }
 }

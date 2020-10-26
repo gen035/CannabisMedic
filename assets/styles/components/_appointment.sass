@@ -1,0 +1,55 @@
+.appointment__tab
+  background: $green-light
+  bottom: 0
+  border-top-left-radius: 10px
+  cursor: pointer
+  right: 0
+  padding: 15px 45px
+  position: fixed
+  text-transform: uppercase
+  transition: background 250ms linear, color 250ms linear
+  z-index: $z-index-1
+  &:hover
+    background: $slate
+    color: $white
+  
+.appointment
+  background-color: $white
+  border-top-left-radius: 10px
+  border-bottom-left-radius: 10px
+  bottom: -400px
+  box-shadow: 0px 3px 23px -4px rgba(184,184,184,1)
+  padding: 14px
+  position: fixed
+  right: 0
+  z-index: $z-index-9
+  transition: bottom 250ms linear
+  width: 310px
+  &.is-opened
+    bottom: 0
+
+.appointment__close
+  position: absolute
+  top: 14px
+  left: 14px
+  cursor: pointer
+  color: $green
+
+.appointment__title
+  color: $green
+  text-align: center
+
+.appointment__form
+  margin-top: 16px
+
+  label
+    color: $green
+    font-size: 12px
+    text-transform: uppercase
+    margin-bottom: 5px
+  input
+    font-size: 12px
+  textarea
+    font-size: 12px
+  button
+    font-size: 12px

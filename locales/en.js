@@ -59,5 +59,16 @@ export default {
     },
     generic: "An error occured",
     home: "Homepage"
+  },
+  appointment: {
+    tab: "Appointment",
+    title: "Make an appointment",
+    fields: {
+      name: "Name",
+      email: "Email",
+      branches: "Choose a branch",
+      message: "Message",
+      send: "Send"
+    }
   }
 }

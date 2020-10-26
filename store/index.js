@@ -2,8 +2,9 @@ export const state = () => ({
   navigation: {},
   settings: {},
   message: {},
-  agegate: {}
-})
+  agegate: {},
+  contacts: []
+});
 
 export const mutations = {
   SET_NAVIGATION(state, navigation) {
@@ -17,5 +18,8 @@ export const mutations = {
   },
   SET_AGEGATE(state, agegate) {
     state.agegate = agegate;
+  },
+  SET_CONTACT(state, contacts) {
+    state.contacts = contacts
   }
 }
