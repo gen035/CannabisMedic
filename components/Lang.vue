@@ -1,5 +1,5 @@
 <template>
-  <Nuxt-link class="lang" v-if="$store.state.i18n.locale === 'en'" :to="switchLocalePath('fr')">
+  <Nuxt-link class="lang" :class="{'is-nav': nav}" v-if="$store.state.i18n.locale === 'en'" :to="switchLocalePath('fr')">
     <i v-if="showGloble" class="fas fa-globe-americas"></i>Français
   </Nuxt-link>
   <Nuxt-link class="lang" v-else :to="switchLocalePath('en')">

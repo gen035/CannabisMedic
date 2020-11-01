@@ -17,6 +17,7 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item nav-item--lang"><Lang /></li>
     </ul>
   </nav>
 </template>
