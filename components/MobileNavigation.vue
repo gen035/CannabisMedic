@@ -23,7 +23,6 @@
         </ul>
       </li>
     </ul>
-    <a class="button mobile-nav-rdv" href="/contact">{{ $t('nav.rdv') }}</a>
     <div class="mobile-nav-social">
       <div class="mobile-nav-social--title">{{ $t('footer.follow') }}</div>
       <a class="mobile-nav-social--link" :href="$store.state.settings.facebook.url" target="_blank">

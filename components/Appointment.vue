@@ -100,9 +100,13 @@
       },
       submit(e) {
         const { honey } = this.form;
+        const serviceId = this.$store.state.settings.emailjs_service_id;
+        const templateId = this.$store.state.settings.emailjs_template_id;
+        const userId = this.$store.state.settings.emailjs_user_id;
+
         if(honey === "") {
           this.submitting = true;
-          emailjs.sendForm('Test', 'template_syjtia6', e.target, 'user_GdOTb3vObHIyv075Ua6O6')
+          emailjs.sendForm(serviceId, templateId, e.target, userId)
             .then((result) => {
               this.error = false;
               this.submitting = false;
