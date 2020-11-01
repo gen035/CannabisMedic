@@ -10,7 +10,7 @@
       <div class="appointment__title">
         {{ $t('appointment.title') }}
       </div>
-      <div class="appointment__form">
+      <div v-if="!error && !success" class="appointment__form">
         <b-form @submit.prevent="submit">
           <b-form-group
             id="input-group-name"
@@ -19,6 +19,7 @@
           >
             <b-form-input
               id="name"
+              name="name"
               v-model="form.name"
               type="text"
               required
@@ -32,22 +33,11 @@
           >
             <b-form-input
               id="email"
+              name="email"
               v-model="form.email"
               type="email"
               required
               :placeholder="$t('appointment.fields.email')"
-            />
-          </b-form-group>
-          <b-form-group
-            id="input-group-branch"
-            :label="$t('appointment.fields.branches')"
-            label-for="input-branch"
-          >
-            <b-form-select
-              id="input-branch"
-              v-model="form.branch"
-              :options="branches"
-              required
             />
           </b-form-group>
           <b-form-group
@@ -57,6 +47,7 @@
           >
             <b-form-textarea
               id="message"
+              name="message"
               v-model="form.message"
               :placeholder="$t('appointment.fields.message')"
               rows="3"
@@ -68,24 +59,37 @@
             v-model="form.honey"
             style="display: none;"
           />
-          <button class="button" type="submit">{{ $t('appointment.fields.send') }}</button>
+          <button class="button" type="submit" :class="{'is-disabled' : submitting}">{{ $t('appointment.fields.send') }}</button>
         </b-form>
+      </div>
+      <div class="appointment__message" v-if="error">
+        {{$t('appointment.error')}}
+        <i class="fas fa-exclamation-triangle"></i>
+        <div class="appointment__message--btn" v-on:click="error = false">{{ $t('appointment.tryagain') }}</div>
+      </div>
+      <div class="appointment__message" v-if="success">
+        {{$t('appointment.success')}}
+        <i class="fas fa-check-circle"></i>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import axios from 'axios';
   import Button from '~/components/Button';
+  import emailjs from 'emailjs-com';
+
   export default {
     data() {
       return {
+        error: false,
+        success: false,
         opened: false,
-        branches: this.$store.state.contacts,
+        submitting: false,
         form: {
           honey: "",
           name: "",
           email: "",
-          branch: "",
           message: ""
         }
       }
@@ -94,21 +98,36 @@
       close() {
         this.opened = false;
       },
-      submit() {
-        const { name, email, honey, message } = this.form;
-
-        console.log(this.form.branch)
+      submit(e) {
+        const { honey } = this.form;
         if(honey === "") {
-          this.$axios.$post(`https://formsubmit.co/ajax/gen.migneron@gmail.com`, {
-            name,
-            email,
-            message
-          }).then(response => {
-            console.log(response)
-          }).catch(error => {
-            console.log(error)
-          })
+          this.submitting = true;
+          emailjs.sendForm('Test', 'template_syjtia6', e.target, 'user_GdOTb3vObHIyv075Ua6O6')
+            .then((result) => {
+              this.error = false;
+              this.submitting = false;
+              this.showSuccess();
+            }, (error) => {
+              console.log('FAILED:', error);
+              this.success = false;
+              this.submitting = false;
+              this.error = true;
+            });
         }
+      },
+      reset() {
+        this.form = {
+          honey: "",
+          name: "",
+          email: "",
+          message: ""
+        };
+        this.success = false;
+      },
+      showSuccess() {
+        this.success = true;
+        this.reset();
+        setTimeout(() => this.close(), 1500);
       },
       toggle() {
         this.opened = !this.opened;
@@ -119,14 +138,3 @@
     }
   }
 </script>
-
-axios.post('/user', {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });

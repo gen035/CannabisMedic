@@ -69,6 +69,9 @@ export default {
       branches: "Choose a branch",
       message: "Message",
       send: "Send"
-    }
+    },
+    error: "An error occured",
+    tryagain: "Try Again",
+    success: "Your request has been sent. Thank you!"
   }
 }

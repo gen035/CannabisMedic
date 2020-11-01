@@ -69,6 +69,9 @@ export default {
       branches: "Succursale",
       message: "Message",
       send: "Envoyer"
-    }
+    },
+    error: "Une erreur est survenue.",
+    tryagain: "Réessayer",
+    success: "Votre demande a été envoyée."
   }
 }
