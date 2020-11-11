@@ -61,7 +61,7 @@ export default {
     home: "Homepage"
   },
   appointment: {
-    tab: "Appointment",
+    tab: "Make an appointment",
     title: "Make an appointment",
     fields: {
       name: "Name",

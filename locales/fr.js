@@ -21,7 +21,7 @@ export default {
   },
   clinic: {
     calculator: {
-      title: "Calculateur de limites de plants et d'entreposage pour la culture intérieure."
+      title: "Calculateur de limites de plants pour la culture personnel"
     }
   },
   dosage: {
@@ -61,7 +61,7 @@ export default {
     home: "Accueil"
   },
   appointment: {
-    tab: "Rendez-vous",
+    tab: "Prendre rendez-vous",
     title: "Demande de rendez-vous",
     fields: {
       name: "Nom",
