@@ -29,20 +29,20 @@
 
 .mini-calculator__tab
   background-color: $green
+  color: $white
   position: fixed
-  right: -10px
+  right: -35px
   top: 50%
-  transform: translateY(-50%)
-  border-top-left-radius: 10px
+  transform: translateY(-50%) rotate(90deg)
   border-bottom-left-radius: 10px
+  border-bottom-right-radius: 10px
   cursor: pointer
-  height: 50px
-  width: 60px
+  height: 60px
   transition: right 250ms linear
   z-index: $z-index-9
+  span
+    display: block;
+    margin-top: 25px;
+    padding: 0 10px;
   &:hover
-    right: 0
-  i
-    color: $white
-    font-size: 24px
-    padding: 13px
+    right: -25px

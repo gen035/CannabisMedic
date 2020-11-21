@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mini-calculator__tab" v-on:click="toggle">
-      <i class="fas fa-calculator"></i>
+      <span>{{ $t('calculator.tab') }}</span>
     </div>
     <div class="mini-calculator" :class="{'is-opened' : opened}">
       <div class="mini-calculator__close" v-on:click="toggle">

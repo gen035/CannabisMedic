@@ -13,7 +13,8 @@ export default {
     plantExterior: "Plants extérieures:",
     stock: "Grammes stockés:",
     interior: "Interieur",
-    exterior: "Extérieur"
+    exterior: "Extérieur",
+    tab: "Calculateur"
   },
   category: {
     benefits: "Bénéfices",
