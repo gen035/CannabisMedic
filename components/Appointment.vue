@@ -40,8 +40,21 @@
               :placeholder="$t('appointment.fields.email')"
             />
           </b-form-group>
+           <b-form-group	
+            id="input-group-branch"	
+            :label="$t('appointment.fields.branches')"	
+            label-for="input-branch"
+          >	
+            <b-form-select	
+              id="input-branch"	
+              name="branch"
+              v-model="form.branch"
+              :options="branches"
+              required	
+            />
+          </b-form-group>
           <b-form-group
-            id="input-group-email"
+            id="input-group-message"
             :label="$t('appointment.fields.message')"
             label-for="message"
           >
@@ -82,6 +95,7 @@
   export default {
     data() {
       return {
+        branches: this.$store.state.contacts,
         error: false,
         success: false,
         opened: false,
@@ -90,7 +104,8 @@
           honey: "",
           name: "",
           email: "",
-          message: ""
+          message: "",
+          branch: ""
         }
       }
     },
@@ -124,14 +139,17 @@
           honey: "",
           name: "",
           email: "",
-          message: ""
+          message: "",
+          branch: ""
         };
         this.success = false;
       },
       showSuccess() {
         this.success = true;
-        this.reset();
-        setTimeout(() => this.close(), 1500);
+        setTimeout(() => {
+          this.close();
+          this.reset();
+        }, 1500);
       },
       toggle() {
         this.opened = !this.opened;
