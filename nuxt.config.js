@@ -74,7 +74,8 @@ export default {
     ['@nuxtjs/google-analytics', {
       id: ''
     }],
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/moment'
   ],
   /*
   ** Build configuration

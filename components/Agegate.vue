@@ -8,7 +8,14 @@
       <div class="agegate-date">
         <div class="agegate-date--label">{{ $t('agegate.placeholder') }}</div>
         <div class="agegate-date--input">
-          <b-form-datepicker id="example-datepicker" :placeholder="$t('agegate.placeholder')" :v-model="date" :locale="this.$store.state.i18n.locale"/>
+          <b-form-datepicker
+            id="example-datepicker"
+            v-model="date"
+            :placeholder="$t('agegate.placeholder')"
+            :locale="this.$store.state.i18n.locale"
+            :show-decade-nav="true"
+          >
+          </b-form-datepicker>
         </div>
         <b-form-checkbox v-model="remember" size="lg" class="agegate-remember">
           <div class="agegate-remember--text">{{ $t('agegate.remember.text') }}</div>
@@ -39,7 +46,8 @@
         logo: this.$store.state.settings.logo,
         date: null,
         oldEnough: false,
-        remember: false
+        remember: false,
+        max: this.$moment(new Date).subtract(18, 'years').toDate()
       }
     },
     watch: {

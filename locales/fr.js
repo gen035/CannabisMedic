@@ -1,7 +1,7 @@
 export default {
   agegate: {
     enter: "Entrer",
-    placeholder: "Date de naissance",
+    placeholder: "Choisir",
     remember: {
       text: "Rester connecté durant 30 jours",
       disclaimer: "Je confirme qu'il ne s'agit pas d'un appareil partagé"

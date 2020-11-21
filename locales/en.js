@@ -1,6 +1,6 @@
 export default {
   agegate: {
-    placeholder: "Date of birth",
+    placeholder: "Choose",
     enter: "Enter",
     remember: {
       text: "Remember me for 30 days",
