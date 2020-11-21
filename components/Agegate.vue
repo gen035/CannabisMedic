@@ -8,7 +8,7 @@
       <div class="agegate-date">
         <div class="agegate-date--label">{{ $t('agegate.placeholder') }}</div>
         <div class="agegate-date--input">
-          <input type="date" v-model="date" />
+          <b-form-datepicker id="example-datepicker" :placeholder="$t('agegate.placeholder')" :v-model="date" :locale="this.$store.state.i18n.locale"/>
         </div>
         <b-form-checkbox v-model="remember" size="lg" class="agegate-remember">
           <div class="agegate-remember--text">{{ $t('agegate.remember.text') }}</div>
