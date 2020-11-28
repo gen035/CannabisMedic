@@ -7,6 +7,9 @@ export default {
       disclaimer: "I confirm this is not a shared device"
     }
   },
+  contact: {
+    schedule: "Schedule"
+  },
   calculator: {
     daily: "Daily grams:",
     plantInterior: "Interior plants:",

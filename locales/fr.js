@@ -7,6 +7,9 @@ export default {
       disclaimer: "Je confirme qu'il ne s'agit pas d'un appareil partagé"
     }
   },
+  contact: {
+    schedule: "Horaire"
+  },
   calculator: {
     daily: "Grammes quotidiens:",
     plantInterior: "Plantes intérieures:",
