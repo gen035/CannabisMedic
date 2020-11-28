@@ -72,7 +72,7 @@ export default {
       }
     }],
     ['@nuxtjs/google-analytics', {
-      id: ''
+      id: 'UA-135339299-1'
     }],
     '@nuxtjs/axios',
     '@nuxtjs/moment'
