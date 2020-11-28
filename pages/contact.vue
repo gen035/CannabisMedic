@@ -20,7 +20,10 @@
           }"
           @click.native="toggleInfoWindow(location.geo.latitude, location.geo.longitude, index, location.location_name)"
         >
-          <img src="//prismic-io.s3.amazonaws.com/cannabismedic/ddfc2045-4d39-4fc7-8ab2-4c43ee171fa5_marker.svg" height="30"/>
+          <img
+            :src="location.marker && location.marker.url ? location.marker.url : '//prismic-io.s3.amazonaws.com/cannabismedic/ddfc2045-4d39-4fc7-8ab2-4c43ee171fa5_marker.svg'"
+            height="30"
+          />
         </gmap-custom-marker>
         <GmapInfoWindow
           :options="infoOptions"

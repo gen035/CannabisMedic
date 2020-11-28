@@ -8,7 +8,8 @@ export default {
     }
   },
   contact: {
-    schedule: "Horaire"
+    schedule: "Horaire",
+    site: "Site web"
   },
   calculator: {
     daily: "Grammes quotidiens:",
