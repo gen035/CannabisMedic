@@ -18,7 +18,7 @@
             lat: location.geo.latitude,
             lng: location.geo.longitude
           }"
-          @click.native="toggleInfoWindow(location.geo.latitude, location.geo.longitude, index)"
+          @click.native="toggleInfoWindow(location.geo.latitude, location.geo.longitude, index, location.location_name)"
         >
           <img src="//prismic-io.s3.amazonaws.com/cannabismedic/ddfc2045-4d39-4fc7-8ab2-4c43ee171fa5_marker.svg" height="30"/>
         </gmap-custom-marker>
@@ -120,10 +120,9 @@
       }
     },
     methods: {
-      toggleInfoWindow(lat, long, index) {
-
+      toggleInfoWindow(lat, long, index, name) {
         this.infoWindowPos = {lat: lat, lng: long};
-        this.infoContent = this.content.body[0].items[index].location_name;
+        this.infoContent = name;
 
         if (this.currentMidx == index) {
           this.infoWinOpen = !this.infoWinOpen;
