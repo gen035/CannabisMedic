@@ -7,12 +7,14 @@
       <p v-if="location.suite">{{location.suite}}</p>
       <p v-if="location.phone">{{location.phone}}</p>
     </div>
-    <div v-if="location.schedule.length > 0" class="location-schedule">
-      <h3 v-if="location.schedule.length > 0">{{$t('contact.schedule')}}</h3>
+    <div v-if="location.schedule.length > 0 && location.schedule[0].text" class="location-schedule">
+      <h3>{{$t('contact.schedule')}}</h3>
       <p v-html="$prismic.asHtml(location.schedule)" />
     </div>
     <div v-if="location.external_website.url" class="location-website">
-      <a target="_blank" :href="location.external_website.url">{{$t('contact.site')}}</a>
+      <a target="_blank" :href="location.external_website.url">
+        {{location.external_website_text || $t('contact.site')}}
+      </a>
     </div>
     <div v-if="location.phone || location.email" class="location-contact">
       <a v-if="location.phone" :href="`tel:${formatPhone(location.phone)}`"><i class="fas fa-phone"></i></a>
