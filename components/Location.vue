@@ -6,6 +6,7 @@
       <p v-if="location.city && location.postal_code">{{location.city}}, {{location.postal_code}}</p>
       <p v-if="location.suite">{{location.suite}}</p>
       <p v-if="location.phone">{{location.phone}}</p>
+      <p class="location-email" v-if="location.email">{{location.email}}</p>
     </div>
     <div v-if="location.schedule.length > 0 && location.schedule[0].text" class="location-schedule">
       <h3>{{$t('contact.schedule')}}</h3>

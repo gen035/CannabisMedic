@@ -39,7 +39,7 @@
       <h1 class="contact-title" v-if="content.title">{{content.title}}</h1>
       <div class="row justify-content-center">
         <template v-for="(item, index) in content.body[0].items.filter(location => !location.hide)">
-          <div class="contact-location col-lg-3 col-md-4 col-sm-6" :key="index" >
+          <div class="contact-location col-lx-3 col-md-4 col-sm-6" :key="index" >
             <Location :location="item" />
           </div>
         </template>
