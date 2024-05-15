@@ -25,7 +25,7 @@
     </ul>
     <div class="mobile-nav-social">
       <div class="mobile-nav-social--title">{{ $t('footer.follow') }}</div>
-      <a class="mobile-nav-social--link" :href="$store.state.settings.facebook.url" target="_blank">
+      <a class="mobile-nav-social--link" :href="getSettings.facebook.url" target="_blank">
         <i class="fab fa-facebook"></i>
         Facebook
       </a>
@@ -36,6 +36,7 @@
   </nav>
 </template>
 <script>
+  import { mapGetters } from 'vuex';
   import Link from './Link';
   import Lang from './Lang';
 
@@ -74,6 +75,11 @@
     components: {
       Link,
       Lang
-    }
+    },
+    computed: {
+    ...mapGetters([
+      'getSettings',
+    ])
+  },
   }
 </script>

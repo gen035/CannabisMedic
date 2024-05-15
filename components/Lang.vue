@@ -14,6 +14,12 @@
         require: false,
         default: false
       }
+    },
+    watch: {
+    '$i18n.locale'(newLocale) {
+      console.log('CHANGE')
+      this.$store.dispatch('onLocaleChanged', newLocale);
     }
+  }
   }
 </script>

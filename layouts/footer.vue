@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 footer-newsletter">
-          <Media :image="$store.state.settings.logo_footer" class="footer-logo" />
+          <Media :image="getSettings.logo_footer" class="footer-logo" />
           <Newsletter />
         </div>
         <div class="col-md-4 footer-nav">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-4 footer-social">
           <div class="footer-title">{{ $t('footer.follow') }}</div>
-          <a class="footer-social-link" :href="$store.state.settings.facebook.url" target="_blank">
+          <a class="footer-social-link" :href="getSettings.facebook.url" target="_blank">
             <i class="fab fa-facebook"></i>
             Facebook
           </a>
@@ -30,6 +30,7 @@
   </footer>
 </template>
 <script>
+  import { mapGetters } from 'vuex';
   import Media from '~/components/Media';
   import Link from '~/components/Link';
   import Newsletter from '~/components/Newsletter';
@@ -41,6 +42,11 @@
       Link,
       Media,
       Newsletter
-    }
+    },
+    computed: {
+    ...mapGetters([
+      'getSettings',
+    ])
+  },
   }
 </script>

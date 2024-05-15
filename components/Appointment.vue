@@ -49,7 +49,7 @@
               id="input-branch"	
               name="branch"
               v-model="form.branch"
-              :options="branches"
+              :options="getContacts"
               required	
             />
           </b-form-group>
@@ -88,6 +88,7 @@
   </div>
 </template>
 <script>
+  import { mapGetters } from "vuex";
   import axios from 'axios';
   import Button from '~/components/Button';
   import emailjs from 'emailjs-com';
@@ -95,7 +96,6 @@
   export default {
     data() {
       return {
-        branches: this.$store.state.contacts,
         error: false,
         success: false,
         opened: false,
@@ -115,9 +115,9 @@
       },
       submit(e) {
         const { honey } = this.form;
-        const serviceId = this.$store.state.settings.emailjs_service_id;
-        const templateId = this.$store.state.settings.emailjs_template_id;
-        const userId = this.$store.state.settings.emailjs_user_id;
+        const serviceId = this.$config.emailjs_service_id;
+        const templateId = this.$config.emailjs_template_id;
+        const userId = this.$config.emailjs_user_id;
 
         if(honey === "") {
           this.submitting = true;
@@ -157,6 +157,12 @@
     },
     components: {
       Button
-    }
+    },
+    computed: {
+    ...mapGetters([
+      'getContacts',
+      'getSettings'
+    ])
+  },
   }
 </script>
