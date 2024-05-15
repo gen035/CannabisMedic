@@ -7,7 +7,7 @@
             <a :href="getHome" title="Cannabis Medic home">
               <Media
                 classes="header-logo"
-                :image="this.$store.state.settings.logo"
+                :image="getSettings.logo"
               />
             </a>
           </div>
@@ -38,7 +38,8 @@
     computed: {
       ...mapGetters([
         'getMessage',
-        'getNavigation'
+        'getNavigation',
+        'getSettings'
       ]),
       getHome() {
         const locale = this.$store.state.i18n.locale;

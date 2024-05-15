@@ -16,9 +16,6 @@ import Agegate from '~/components/Agegate';
 import Appointment from '~/components/Appointment';
 
 export default {
-  middleware: [
-    'settings',
-  ],
   components: {
     Appointment,
     Header,

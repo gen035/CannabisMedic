@@ -4,7 +4,7 @@
       <div class="agegate">
         <Media
           classes="agegate-logo"
-          :image="this.$store.state.settings.logo"
+          :image="getSettings.logo"
         />
         <div class="agegate-date">
           <div class="agegate-date--label">{{ $t('agegate.placeholder') }}</div>
@@ -47,7 +47,6 @@ export default {
     return {
       showAgegate: true,
       agegate: this.getAgegate,
-      logo: this.$store.state.settings.logo,
       date: null,
       oldEnough: false,
       remember: false,
@@ -96,6 +95,7 @@ export default {
   computed: {
     ...mapGetters([
       'getAgegate',
+      'getSettings'
     ])
   },
 }

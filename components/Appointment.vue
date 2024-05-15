@@ -115,9 +115,9 @@
       },
       submit(e) {
         const { honey } = this.form;
-        const serviceId = this.$store.state.settings.emailjs_service_id;
-        const templateId = this.$store.state.settings.emailjs_template_id;
-        const userId = this.$store.state.settings.emailjs_user_id;
+        const serviceId = this.getSettings.emailjs_service_id;
+        const templateId = this.getSettings.emailjs_template_id;
+        const userId = this.getSettings.emailjs_user_id;
 
         if(honey === "") {
           this.submitting = true;
@@ -160,7 +160,8 @@
     },
     computed: {
     ...mapGetters([
-      'getContacts'
+      'getContacts',
+      'getSettings'
     ])
   },
   }
