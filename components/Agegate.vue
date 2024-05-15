@@ -24,18 +24,19 @@
           </b-form-checkbox>
         </div>
         <Button class="agegate-button" type="button" :text="$t('agegate.enter')" :disabled="!oldEnough" v-on:click.native="enter" />
-        <div class="agegate-disclaimer">{{ agegate.disclaimer }}</div>
+        <div class="agegate-disclaimer">{{ getAgegate.disclaimer }}</div>
       </div>
     </div>
   </client-only>
 </template>
 <script>
+import {mapGetters} from "vuex";
 import Button from '~/components/Button';
 import Media from '~/components/Media';
 
 export default {
   created () {
-    const agegate = this.$store.state.agegate;
+    const agegate = this.getAgegate;
     const hasCookie = this.$cookies.get(agegate.cookie_name);
 
     if (!agegate || hasCookie) {
@@ -45,7 +46,7 @@ export default {
   data () {
     return {
       showAgegate: true,
-      agegate: this.$store.state.agegate,
+      agegate: this.getAgegate,
       logo: this.$store.state.settings.logo,
       date: null,
       oldEnough: false,
@@ -74,9 +75,9 @@ export default {
     enter () {
       if (this.remember) {
         // Set cookie
-        const expires = this.agegate.cookie_duration;
+        const expires = this.getAgegate.cookie_duration;
         this.$cookies.set(
-          this.agegate.cookie_name,
+          this.getAgegate.cookie_name,
           true,
           {
             maxAge: expires * 24 * 60 * 60
@@ -91,6 +92,11 @@ export default {
   components: {
     Button,
     Media
-  }
+  },
+  computed: {
+    ...mapGetters([
+      'getAgegate',
+    ])
+  },
 }
 </script>

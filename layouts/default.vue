@@ -20,7 +20,6 @@ export default {
     'settings',
     'navigation',
     'message',
-    'agegate',
     'contact'
   ],
   components: {
