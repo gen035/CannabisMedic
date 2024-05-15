@@ -34,6 +34,9 @@ export const getters = {
     getMessage(state) {
         return state.message;
     },
+    getNavigation(state) {
+      return state.navigation
+    }
 }
 
 
@@ -64,6 +67,9 @@ export const actions = {
             const messageResponse = await app.$prismic.api.query(app.$prismic.predicates.at('document.type', 'message'), {lang: `${locale}-ca`});
             messageResponse.results.forEach(result => commit('SET_MESSAGE', result.data));
            
+            //Get Navigation
+            const navigationResponse = await app.$prismic.api.query(app.$prismic.predicates.at('document.type', 'navigation'), {lang: `${locale}-ca`});
+            navigationResponse.results.forEach(result => commit('SET_NAVIGATION', result.data));
         } catch (error) {
             console.log('STORE', error)
         }

@@ -12,15 +12,16 @@
             </a>
           </div>
           <div class="col-lg-9 col-md-12 d-md-block d-none">
-            <Navigation :navigation="getNav" />
+            <Navigation :navigation="getNavigation.body" />
           </div>
           <div class="col-4 d-md-none header-navigation--menu" v-on:click="open">Menu</div>
         </div>
       </div>
-      <MobileNavigation :navigation="getNav" :opened="menuOpened" @closed="closed" />
+      <MobileNavigation :navigation="getNavigation.body" :opened="menuOpened" @closed="closed" />
     </header>
 </template>
 <script>
+  import { mapGetters } from "vuex";
   import Button from '~/components/Button';
   import Lang from '~/components/Lang';
   import Media from '~/components/Media';
@@ -35,12 +36,10 @@
       }
     },
     computed: {
-      getNav() {
-        return this.$store.state.navigation.body
-      },
-      getMessage() {
-        return this.$store.state.message
-      },
+      ...mapGetters([
+        'getMessage',
+        'getNavigation'
+      ]),
       getHome() {
         const locale = this.$store.state.i18n.locale;
 

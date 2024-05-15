@@ -18,7 +18,6 @@ import Appointment from '~/components/Appointment';
 export default {
   middleware: [
     'settings',
-    'navigation',
   ],
   components: {
     Appointment,

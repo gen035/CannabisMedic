@@ -30,7 +30,7 @@
   </client-only>
 </template>
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 import Button from '~/components/Button';
 import Media from '~/components/Media';
 

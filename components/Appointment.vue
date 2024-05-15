@@ -88,7 +88,7 @@
   </div>
 </template>
 <script>
-  import {mapGetters} from "vuex";
+  import { mapGetters } from "vuex";
   import axios from 'axios';
   import Button from '~/components/Button';
   import emailjs from 'emailjs-com';
