@@ -1,10 +1,11 @@
 <template>
-  <div class="message" :class="{'is-closed' : closed }" v-if="message && message.show_message">
-    <i class="fas fa-times-circle" v-if="message.closable" v-on:click="close"></i>
-    <div v-html="$prismic.asHtml(message.message)" />
+  <div class="message" :class="{'is-closed' : closed }" v-if="getMessage && getMessage.show_message">
+    <i class="fas fa-times-circle" v-if="getMessage.closable" v-on:click="close"></i>
+    <div v-html="$prismic.asHtml(getMessage.message)" />
   </div>
 </template>
 <script>
+  import {mapGetters} from "vuex";
   import Button from '~/components/Button';
   import Lang from '~/components/Lang';
   import Media from '~/components/Media';
@@ -28,6 +29,11 @@
       close() {
         this.closed = true;
       }
+    },
+    computed: {
+      ...mapGetters([
+        'getMessage',
+      ])
     }
   }
 </script>

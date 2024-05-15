@@ -19,7 +19,6 @@ export default {
   middleware: [
     'settings',
     'navigation',
-    'message',
     'contact'
   ],
   components: {
