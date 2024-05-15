@@ -19,7 +19,7 @@ export const mutations = {
   SET_AGEGATE(state, agegate) {
     state.agegate = agegate;
   },
-  SET_CONTACT(state, contacts) {
+  SET_CONTACTS(state, contacts) {
     state.contacts = contacts
   }
 }
@@ -27,6 +27,9 @@ export const mutations = {
 export const getters = {
     getAgegate(state) {
         return state.agegate;
+    },
+    getContacts(state) {
+      return state.contacts;
     },
     getMessage(state) {
         return state.message;
@@ -43,12 +46,25 @@ export const actions = {
             const ageGateResponse = await app.$prismic.api.query(app.$prismic.predicates.at('document.type', 'agegate'), {lang: `${locale}-ca`});
             ageGateResponse.results.forEach(result => commit('SET_AGEGATE', result.data));
 
+            //Get Contact
+            const contactResponse = await app.$prismic.api.query(app.$prismic.predicates.at('document.type', 'contact'), {lang: `${locale}-ca`});
+            const emails = [{text: '---', value: ""}];
+            contactResponse.results.forEach(result => {
+              result.data.body[0].items.forEach(item => {
+                if (!item.hide) {
+                  emails.push({
+                    text: item.location_name,
+                    value: item.location_name
+                  });
+                }
+              });
+            });
+             commit('SET_CONTACTS', emails);
             //Get Message
             const messageResponse = await app.$prismic.api.query(app.$prismic.predicates.at('document.type', 'message'), {lang: `${locale}-ca`});
             messageResponse.results.forEach(result => commit('SET_MESSAGE', result.data));
            
         } catch (error) {
-            commit('SET_ERROR', error);
             console.log('STORE', error)
         }
     }

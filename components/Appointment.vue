@@ -49,7 +49,7 @@
               id="input-branch"	
               name="branch"
               v-model="form.branch"
-              :options="branches"
+              :options="getContacts"
               required	
             />
           </b-form-group>
@@ -88,6 +88,7 @@
   </div>
 </template>
 <script>
+  import {mapGetters} from "vuex";
   import axios from 'axios';
   import Button from '~/components/Button';
   import emailjs from 'emailjs-com';
@@ -95,7 +96,6 @@
   export default {
     data() {
       return {
-        branches: this.$store.state.contacts,
         error: false,
         success: false,
         opened: false,
@@ -157,6 +157,11 @@
     },
     components: {
       Button
-    }
+    },
+    computed: {
+    ...mapGetters([
+      'getContacts'
+    ])
+  },
   }
 </script>
