@@ -1,8 +1,8 @@
 <template>
   <mailchimp-subscribe
     :url="getSettings.mailchimp_url"
-    :user-id="getSettings.mailchimp_user_id"
-    :list-id="getSettings.mailchimp_list_id"
+    :user-id="this.$config.mailchimp_user_id"
+    :list-id="this.$config.mailchimp_list_id"
   >
     <template v-slot="{ subscribe, setEmail, error, success, loading }">
       <div class="newsletter">
@@ -21,7 +21,6 @@
   </mailchimp-subscribe>
 </template>
 <script>
-  import { mapGetters } from 'vuex';
   export default {
     computed: {
     ...mapGetters([

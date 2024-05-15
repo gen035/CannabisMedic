@@ -88,5 +88,12 @@ export default {
     extend(config, ctx) {
     },
     transpile: [/^vue2-google-maps($|\/)/, 'vue2-gmap-custom-marker'],
+  },
+  publicRuntimeConfig: {
+    emailjs_service_id: process.env.EMAIL_SERVICE_ID,
+    emailjs_template_id: process.env.EMAIL_TEMPLATE_ID,
+    emailjs_user_id: process.env.EMAIL_USER_ID,
+    mailchimp_list_id: process.env.MAILCHIMP_LIST_ID,
+    mailchimp_user_id:process.env.MAILCHIMP_USER_ID,
   }
 }

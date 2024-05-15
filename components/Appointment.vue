@@ -115,9 +115,9 @@
       },
       submit(e) {
         const { honey } = this.form;
-        const serviceId = this.getSettings.emailjs_service_id;
-        const templateId = this.getSettings.emailjs_template_id;
-        const userId = this.getSettings.emailjs_user_id;
+        const serviceId = this.$config.emailjs_service_id;
+        const templateId = this.$config.emailjs_template_id;
+        const userId = this.$config.emailjs_user_id;
 
         if(honey === "") {
           this.submitting = true;
